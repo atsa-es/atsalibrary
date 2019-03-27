@@ -22,11 +22,5 @@
 #' @source \href{https://www.nrcs.usda.gov/wps/portal/nrcs/main/wa/snow/}{USDA WA Snow Survey Program}
 #'
 #' @examples
-#' data(greeklandings)
-#' anchovy = ts(subset(greeklandings, Species=="Anchovy")$log.metric.tons, start=1964)
-#' plot(anchovy)
-#' 
-#' library(ggplot2)
-#' ggplot(greeklandings, aes(x=Year, y=log.metric.tons)) + 
-#'       geom_line() + facet_wrap(~Species)
-"greeklandings"
+#' data(snotel)
+"snotel"

@@ -3,7 +3,6 @@
 \docType{data}
 \name{snotel}
 \alias{snotel}
-\alias{greeklandings}
 \title{Washington State SNOTEL measurements}
 \format{Objects of class \code{"data.frame"}.  Columns are Station, Station.Id, 
 Year, Month, SWE, and Date}
@@ -23,12 +22,6 @@ that site on the same day. The data were downloaded from the USDA
 Natural Resources Conservation Service websited for the Washington Snow Survey Program.
 }
 \examples{
-data(greeklandings)
-anchovy = ts(subset(greeklandings, Species=="Anchovy")$log.metric.tons, start=1964)
-plot(anchovy)
-
-library(ggplot2)
-ggplot(greeklandings, aes(x=Year, y=log.metric.tons)) + 
-      geom_line() + facet_wrap(~Species)
+data(snotel)
 }
 \keyword{datasets}

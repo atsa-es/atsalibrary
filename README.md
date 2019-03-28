@@ -3,6 +3,6 @@
 To install:
 ```
 library(devtools)
-devtools::install_github("nwfsc-timeseries/atsa-package")
+devtools::install_github("nwfsc-timeseries/atsalibrary")
 ```
 

@@ -4,7 +4,8 @@
 \name{ChilkoSockeye}
 \alias{ChilkoSockeye}
 \title{Chilko River SR Data}
-\format{Object of class \code{"data.frame"}.  
+\format{
+Object of class \code{"data.frame"}.  
 Columns are brood.yr, Sp (Spawners), Rec (Recruits), PDO.t2, and PDO.t3.
 \itemize{
   \item \strong{brood.yr}  Brood year. 
@@ -12,15 +13,16 @@ Columns are brood.yr, Sp (Spawners), Rec (Recruits), PDO.t2, and PDO.t3.
   \item \strong{Rec} Recruits (count) 
   \item \strong{PDO.t2} Pacific Decadal Oscillation (PDO) at year $t-2$ 
   \item \strong{PDO.t3} Pacific Decadal Oscillation (PDO) at year $t-3$ 
-}}
+}
+}
 \source{
 \href{https://www.ramlegacy.org/}{RAM Legacy Stock Assessment Database}
 }
 \usage{
-data(KvichakSockeye)
+data(ChilkoSockeye)
 }
 \description{
-Spawner-recruit data for sockeye salmon from the Kvichak River.
+Spawner-recruit data for sockeye salmon from the Chilko River.
 }
 \details{
 Spawner-recruit data for sockeye salmon 

@@ -4,8 +4,10 @@
 \name{snotel}
 \alias{snotel}
 \title{Washington State SNOTEL measurements}
-\format{Objects of class \code{"data.frame"}.  Columns are Station, Station.Id, 
-Year, Month, SWE, and Date}
+\format{
+Objects of class \code{"data.frame"}.  Columns are Station, Station.Id, 
+Year, Month, SWE, and Date
+}
 \source{
 \href{https://www.nrcs.usda.gov/wps/portal/nrcs/main/wa/snow/}{USDA WA Snow Survey Program}
 }

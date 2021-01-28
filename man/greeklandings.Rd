@@ -4,7 +4,9 @@
 \name{greeklandings}
 \alias{greeklandings}
 \title{Annual Anchovy, Sardine and Mackerel landings in Hellenic Waters 1964-2007}
-\format{Objects of class \code{"data.frame"}.  Columns are Year, Species, log.metric.tons, metric.tons}
+\format{
+Objects of class \code{"data.frame"}.  Columns are Year, Species, log.metric.tons, metric.tons
+}
 \source{
 \href{http://dlib.statistics.gr/portal/page/portal/ESYE}{Hellenic Statisitcal Authority Digital Library}
 }

@@ -4,8 +4,10 @@
 \name{NHTemp}
 \alias{NHTemp}
 \title{Northern Hemisphere land and ocean temperature anomalies}
-\format{Object of class \code{"data.frame"}.  Columns are Year and Value.
-#'}
+\format{
+Object of class \code{"data.frame"}.  Columns are Year and Value.
+#'
+}
 \source{
 \href{https://www.ncdc.noaa.gov/cag/global/time-series}{NOAA Climate Monitoring}
 }

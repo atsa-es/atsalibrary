@@ -4,7 +4,9 @@
 \name{MLCO2}
 \alias{MLCO2}
 \title{Mauna Loa C02 measurements}
-\format{Objects of class \code{"data.frame"}.  Columns are year, month, ppm (part per million)}
+\format{
+Objects of class \code{"data.frame"}.  Columns are year, month, ppm (part per million)
+}
 \source{
 \href{https://www.esrl.noaa.gov/gmd/ccgg/trends/data.html}{NOAA ESRL Trends in Atmospheic Carbon Dioxide}
 }

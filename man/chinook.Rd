@@ -7,8 +7,10 @@
 \alias{chinook-month}
 \alias{chinook-year}
 \title{Monthly and annual Chinook salmon commercial landings}
-\format{Objects of class \code{"data.frame"}.  Columns are Year, 
-Month (if monthly), Species, State, log.metric.tons, metric.tons, and Value (USD)}
+\format{
+Objects of class \code{"data.frame"}.  Columns are Year, 
+Month (if monthly), Species, State, log.metric.tons, metric.tons, and Value (USD)
+}
 \source{
 \href{https://www.st.nmfs.noaa.gov/commercial-fisheries/commercial-landings/}{NOAA Commercial Landings Statistics}
 }
@@ -16,9 +18,9 @@ Month (if monthly), Species, State, log.metric.tons, metric.tons, and Value (USD
 data(chinook)
 }
 \description{
-Monthly data on monthly and annual commercial landings and value of Chinook salmon 
-in WA, OR, N CA, and S CA assembled by the NOAA Fisheries, 
-Fisheries Statistics Division
+Monthly (WA and OR) and yearly (AK, CA, MI, OR, PA, and WA) data on 
+commercial landings and value of Chinook salmon. Data were assembled by the NOAA Fisheries, 
+Fisheries Statistics Division.
 }
 \details{
 There are two datasets included:  chinook-month and chinook-year.  The monthly data are available from 1990 and the annual data are

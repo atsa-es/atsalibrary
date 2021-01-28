@@ -1,6 +1,6 @@
 #' Chilko River SR Data
 #'
-#' @description Spawner-recruit data for sockeye salmon from the Kvichak River.
+#' @description Spawner-recruit data for sockeye salmon from the Chilko River.
 #' 
 #' @details Spawner-recruit data for sockeye salmon 
 #' (_Oncorhynchus nerka_) from the Chilko River
@@ -12,7 +12,7 @@
 #' 
 #' @name ChilkoSockeye
 #'
-#' @usage data(KvichakSockeye)
+#' @usage data(ChilkoSockeye)
 #' 
 #' @format Object of class \code{"data.frame"}.  
 #' Columns are brood.yr, Sp (Spawners), Rec (Recruits), PDO.t2, and PDO.t3.

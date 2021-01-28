@@ -1,6 +1,6 @@
 Package: atsalibrary
 Title: Packages, data and scripts for ATSA course and book
-Version: 1.0
+Version: 1.1
 Author: Eli Holmes
 Maintainer: <eli.holmes@noaa.gov>
 Description: This package that will load the needed packages and data files for the ATSA course material when students install from GitHub.
@@ -12,6 +12,7 @@ Imports:
   devtools (>= 2.0.1),
   dplyr (>= 0.7.5),
   forecast (>= 8.4),
+  fpp2 (>= 2.4),
   ggmap (>= 3.0.0),
   ggplot2 (>= 3.0.0),
   grid (>= 3.4.1),
@@ -21,7 +22,7 @@ Imports:
   knitr (>= 1.20),
   loo (>= 2.1.0),
   magrittr (>= 1.5),
-  MARSS (>= 3.10.8),
+  MARSS (>= 3.11.2),
   quantmod (>= 0.3-13),
   R2jags (>= 0.5-7),
   rjags (>= 4-8),
@@ -31,6 +32,7 @@ Imports:
   rstan (>= 2.18.2),
   stats (>= 3.5.3),
   stringr (>= 1.4.0),
+  tidyr (>= 1.1.2),
   tseries (>= 0.10-46),
   urca (>= 1.3-0),
   atsar

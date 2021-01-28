@@ -1,8 +1,8 @@
 #' Monthly and annual Chinook salmon commercial landings
 #'
-#' @description Monthly data on monthly and annual commercial landings and value of Chinook salmon 
-#' in WA, OR, N CA, and S CA assembled by the NOAA Fisheries, 
-#' Fisheries Statistics Division
+#' @description Monthly (WA and OR) and yearly (AK, CA, MI, OR, PA, and WA) data on 
+#' commercial landings and value of Chinook salmon. Data were assembled by the NOAA Fisheries, 
+#' Fisheries Statistics Division.
 #' 
 #' @details There are two datasets included:  chinook-month and chinook-year.  The monthly data are available from 1990 and the annual data are
 #' available from 1950.  From the NOAA Fisheries Statistics Divison: "Collecting

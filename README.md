@@ -1,4 +1,6 @@
-# atsa-package
+# atsalibrary-package
+
+This the package with data for the Applied Time Series Analysis course and lab book.
 
 To install:
 ```

@@ -2,6 +2,11 @@
 output: html_document
 ---
 
+atsalibrary 1.2
+------------------------------------
+* sockeye dataset added with a number of Bristol Bay spawner recruit data
+* began tutorials via learnr
+
 atsalibrary 1.1
 ------------------------------------
 * lakeWA dataset added with temperature, total phosporous, and pH monthly anomalies.

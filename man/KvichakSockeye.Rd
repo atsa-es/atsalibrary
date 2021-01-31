@@ -5,14 +5,13 @@
 \alias{KvichakSockeye}
 \title{Kvichak River SR Data}
 \format{
-Object of class \code{"data.frame"}.  
-Columns are brood.yr, Sp (Spawners), Rec (Recruits), PDO.t2, and PDO.t3.
+Object of class \code{"data.frame"}
 \itemize{
-  \item \strong{brood.yr}  Brood year. 
-  \item \strong{Sp} Spawners (count) 
-  \item \strong{Rec} Recruits (count) 
-  \item \strong{PDO.t2} Pacific Decadal Oscillation (PDO) at year $t-2$ 
-  \item \strong{PDO.t3} Pacific Decadal Oscillation (PDO) at year $t-3$ 
+  \item \strong{brood_year}  Brood year. 
+  \item \strong{spawners} Spawners (count) in thousands 
+  \item \strong{recruits} Recruits (count) in thousands
+  \item \strong{pdo_summer_t2} Pacific Decadal Oscillation (PDO) from Apr-Sep of brood year $t+2$ 
+  \item \strong{pdo_winter_ts} Pacific Decadal Oscillation (PDO) from Oct (brood year $t+2$) to Mar (brood year $t+3$)
 }
 }
 \source{
@@ -38,5 +37,10 @@ data(KvichakSockeye)
 RAM Legacy Stock Assessment Database. 2018. Version 4.44-assessment-only. Released 2018-12-22. Retrieved from DOI:10.5281/zenodo.2542919.
 
 Ricard, D., Minto, C., Jensen, O.P. and Baum, J.K. (2012) Evaluating the knowledge base and status of commercially exploited marine species with the RAM Legacy Stock Assessment Database. Fish and Fisheries 13 (4) 380-398. DOI: 10.1111/j.1467-2979.2011.00435.x
+
+Spawner escapement estimates are originally from: 1997-2017 Appendix Table A12.
+}
+\seealso{
+\link{sockeye}
 }
 \keyword{datasets}

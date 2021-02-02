@@ -10,69 +10,384 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-## Topic 1
+## Topic 1: Building matrices
 
-### Exercise 
+1. Build a $4 \times 3$ matrix with the number 1 in column 1, number 2 in column 2 and number 3 in column 3. 
 
-*Here's a simple exercise with an empty code chunk provided for entering the answer.*
+    ```{r q1, exercise=TRUE, exercise.eval=FALSE}
+    matrix()
+    ```
 
-Write the R code required to add two plus two:
-
-```{r two-plus-two, exercise=TRUE}
-library(MARSS)
-set.seed(123)
-dat <- cumsum(rnorm(100,0,0.2))
-MARSS(dat)
+```{r q1-solution}
+matrix(rep(1:3, each=4), 4, 3)
 ```
 
-### Exercise with Code
+2. Create a matrix with the numbers 1 through 4 in each row (so same values in each column). Assign to the name `mat`. Extract the elements in the 1st and 2nd rows and 1st and 2nd columns (you'll have a $2 \times 2$ matrix). Show the R code that will do this.
 
-*Here's an exercise with some prepopulated code as well as `exercise.lines = 5` to provide a bit more initial room to work.*
+    ```{r q2, exercise=TRUE, exercise.eval=FALSE}
+    mat <- matrix()
+    ```
 
-Now write a function that adds any two numbers and then call it:
-
-```{r add-function, exercise=TRUE, exercise.lines = 5}
-add <- function() {
-  
-}
+```{r q2-solution}
+mat <- matrix(1:4, 4, 3)
+mat[1:2,1:2]
 ```
 
-## Topic 2
+3. Build a $4 \times 3$ matrix with the numbers 1 through 12 by row (meaning the first row will have the numbers 1 through 3 in it).
 
-### Exercise with Hint
+    ```{r q3, exercise=TRUE, exercise.eval=FALSE}
+    mat <- matrix()
+    ```
 
-*Here's an exercise where the chunk is pre-evaulated via the `exercise.eval` option (so the user can see the default output we'd like them to customize). We also add a "hint" to the correct solution via the chunk immediate below labeled `print-limit-hint`.*
-
-Modify the following code to limit the number of rows printed to 5:
-
-```{r print-limit, exercise=TRUE, exercise.eval=TRUE}
-mtcars
+```{r q3-solution}
+matrix(1:12, 4, 3, byrow = TRUE)
 ```
 
-```{r print-limit-hint}
-head(mtcars)
+4. Extract the 3rd row of the above.  Show R code to do this where you end up with a vector and how to do this where you end up with a $1 \times 3$ matrix.
+
+    ```{r q4, exercise=TRUE, exercise.eval=FALSE}
+    mat <- matrix()
+    ```
+
+```{r q4-solution}
+mat <- matrix(1:12, 4, 3, byrow = TRUE)
+mat[3, , drop=FALSE]
 ```
 
-### Quiz
+5. Build a $4 \times 3$ matrix that is all 1s except a 2 in the (2,3) element (2nd row, 3rd column).
 
-*You can include any number of single or multiple choice questions as a quiz. Use the `question` function to define a question and the `quiz` function for grouping multiple questions together.*
+    ```{r q5, exercise=TRUE, exercise.eval=FALSE}
+    mat <- matrix()
+    ```
 
-Some questions to verify that you understand the purposes of various base and recommended R packages:
+```{r q5-solution}
+mat <- matrix(1, 4, 3)
+mat[2,3] <- 2
+mat
+```
 
-```{r quiz}
+6. Let $\mathbf{A}=\left[ \begin{smallmatrix}1&4&7\\2&5&8\\3&6&9\end{smallmatrix}\right]$. Build this A matrix in R.
+
+    ```{r q6, exercise=TRUE, exercise.eval=FALSE}
+    
+    ```
+
+```{r q6-solution}
+A <- matrix(1:9, 3, 3)
+A
+```
+
+## Topic 2: Diagonal matrices
+
+```{r quizdiag1}
 quiz(
-  question("Which package contains functions for installing other R packages?",
-    answer("base"),
-    answer("tools"),
-    answer("utils", correct = TRUE),
-    answer("codetools")
+  question("What is a square matrix?",
+    answer("A matrix with the same number of rows and columns.", correct = TRUE),
+    answer("A matrix that can always be inverted."),
+    answer("A matrix with only integers.")
   ),
-  question("Which of the R packages listed below are used to create plots?",
-    answer("lattice", correct = TRUE),
-    answer("tools"),
-    answer("stats"),
-    answer("grid", correct = TRUE)
+  question("A diagonal matrix is always square.",
+    answer("TRUE", correct = TRUE),
+    answer("FALSE")
+  ),
+  question("A diagonal matrix has what value on the offdiagonal?",
+    answer("0", correct = TRUE),
+    answer("1"),
+    answer("Can be any value.")
+  ),
+  question("A diagonal matrix has what value on the diagonal?",
+    answer("0"),
+    answer("1"),
+    answer("Can be any value.", correct = TRUE)
+  ),
+  question("All values on the diagonal of a diagonal matrix must be the same.",
+    answer("TRUE"),
+    answer("FALSE", correct = TRUE)
+  ),
+  question("What is an identity matrix?",
+    answer("A square matrix will all 1s."),
+    answer("A diagonal matrix with 1s on the diagonal and 0s on the offdiagonal", correct = TRUE),
+    answer("A matrix's inverse.")
+  ),
+  question("If I is a 3 x 3 identity matrix and A is a 3 x 3 matrix, then `I %*% A` equals what?",
+    answer("A", correct=TRUE),
+    answer("That matrix muliplication is illegal."),
+    answer("I")
+  ),
+  question("If I is a 3 x 3 identity matrix and A is a 3 x 3 matrix, then `A %*% I` equals what?",
+    answer("A", correct=TRUE),
+    answer("That matrix multiplication is illegal."),
+    answer("I")
+  ),
+  question("If I is a 3 x 3 identity matrix and A is a 3 x 4 matrix, then `A %*% I` equals what?",
+    answer("A"),
+    answer("That matrix muliplication is illegal.", correct=TRUE),
+    answer("I")
+  ),
+  question("What size must I be for `A %*% I` to be legal? Here I is still an identity matrix.",
+    answer("4 x 4", correct=TRUE),
+    answer("4 x 3"),
+    answer("An identity matrix can never appear on the right in matrix multiplication.")
   )
 )
 ```
+
+1. Build a $4 \times 4$ diagonal matrix with 1 through 4 on the diagonal.
+
+    ```{r qdiag1, exercise=TRUE, exercise.eval=FALSE}
+    
+    ```
+
+```{r qdiag1-solution}
+diag(1:4)
+```
+
+2. Build a $5 \times 5$ identity matrix.
+
+    ```{r qdiag2, exercise=TRUE, exercise.eval=FALSE}
+    
+    ```
+
+```{r qdiag2-solution}
+diag(1, 5)
+```
+
+3. Assign the matrix in question 8 to `mat` and replace the diagonal in `mat` with 2 (the number 2).
+
+    ```{r qdiag3, exercise=TRUE, exercise.eval=FALSE}
+    
+    ```
+
+```{r qdiag3-solution}
+mat <- diag(1, 5)
+diag(mat) <- 2
+mat
+```
+
+4. Build a $5 \times 5$ matrix with 2 on the diagonal and 1s on the offdiagonals.
+
+    ```{r qdiag4, exercise=TRUE, exercise.eval=FALSE}
+    
+    ```
+
+```{r qdiag4-solution}
+mat <- matrix(1, 5, 5)
+diag(mat) <- 2
+mat
+```
+
+
+5. Build a $3 \times 3$ matrix with the first 9 letters of the alphabet.  First column should be "a", "b", "c".  ```letters[1:9]``` gives you these letters.
+
+    ```{r qdiag5, exercise=TRUE, exercise.eval=FALSE}
+    mat <- 
+    ```
+
+```{r qdiag5-solution}
+mat <- matrix(letters[1:9], 3, 3)
+mat
+```
+
+6. Replace the diagonal of this matrix with the word "cat".
+
+    ```{r qdiag6, exercise=TRUE, exercise.eval=FALSE}
+     
+    ```
+
+```{r qdiag6-solution}
+diag(mat) <- "cat"
+mat
+```
+
+7. Create at $3 \times 3$ matrix with 0 (number 0) on the offdiagonals and "cat" on the diagonal. You will need to use `list()` inside the `matrix()` call.
+
+    ```{r qdiag7, exercise=TRUE, exercise.eval=FALSE}
+    mat <- 
+    ```
+
+```{r qdiag7-solution}
+mat <- matrix(list(0), 3, 3)
+diag(mat) <- "cat"
+mat
+```
+
+```{r quizdiag2}
+quiz(
+  question("What happens if you use `diag('cat', 3)`?",
+    answer("It works."),
+    answer("It puts NA on the diagonal", correct = TRUE),
+    answer("It puts the character 0 on the offdiagonal.")
+  ),
+  question("What happens if you use `mat <- diag(1, 3); diag(mat) <- 'cat'`?",
+    answer("It works."),
+    answer("It puts NA on the diagonal"),
+    answer("It changes number 0 on the offdiagonal to character '0'.", correct = TRUE)
+    ),
+  question("What happens if you use `mat <- matrix(0, 3, 3); diag(mat) <- 'cat'`?",
+    answer("It works."),
+    answer("It puts NA on the diagonal"),
+    answer("It changes number 0 on the offdiagonal to character '0'.", correct = TRUE)
+    )
+)
+```
+
+
+
+## Topic 3. Matrix multiplication
+
+```{r quizmult1}
+quiz(
+  question("`A = B %*% C`. If B is a 2 x 3 matrix, C must have how many rows?",
+    answer("1"),
+    answer("2"),
+    answer("3", correct = TRUE)
+  ),
+  question("How many columns does C have?",
+    answer("2"),
+    answer("3"),
+    answer("It can have any number of columns.", correct=TRUE)
+  ),
+  question("`A = B %*% C`. If B is a p x q matrix and C is a q x n matrix, what is the size of A?",
+    answer("p x n", correct = TRUE),
+    answer("q x n"),
+    answer("p x p")
+  )
+)
+```
+
+1. Build a $4 \times 3$ matrix with all 1s. Multiply by a $3 \times 4$ matrix with all 2s.
+
+    ```{r qmult1, exercise=TRUE, exercise.eval=FALSE}
+    mat1 <-
+    mat2 <-
+    ```
+
+```{r qmult1-solution}
+mat1 <- matrix(1, 4, 3)
+mat2 <- matrix(2, 3, 4)
+mat1 %*% mat2
+```
+
+2. In the equation, $\mathbf{A} \mathbf{B} = \mathbf{C}$, let $\mathbf{A}=\left[ \begin{smallmatrix}1&4&7\\2&5&8\\3&6&9\end{smallmatrix}\right]$.  Build a $\mathbf{B}$ matrix such that $\mathbf{C}=\left[ \begin{smallmatrix}7\\8\\9\end{smallmatrix}\right]$. Show your R code for $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{A} \mathbf{B}$.
+
+    ```{r qmult2, exercise=TRUE, exercise.eval=FALSE}
+
+    ```
+
+```{r qmult2-solution}
+A <- matrix(1:9, 3, 3)
+B <- matrix(c(0,0, 1), 3, 1)
+A %*% B
+```
+
+
+3. Let $\mathbf{A}$ be the same as in the previous question.  Build a $\mathbf{B}$ matrix such that $\mathbf{B}\mathbf{A}=\left[ \begin{smallmatrix}2 & 5 & 8\end{smallmatrix}\right]$. Show your R code for $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{A} \mathbf{B}$.
+
+    ```{r qmult3, exercise=TRUE, exercise.eval=FALSE}
+
+    ```
+
+```{r qmult3-solution}
+A <- matrix(1:9, 3, 3)
+B <- matrix(c(0, 1, 0), 1, 3)
+B %*% A
+```
+
+4. Make $\mathbf{A}=\left[ \begin{smallmatrix}1&2\\3&4\end{smallmatrix}\right]$.  Build a $\mathbf{B}$ diagonal matrix such that $\mathbf{A}\mathbf{B}=\left[\begin{smallmatrix}1&6\\2&8\end{smallmatrix}\right]$. Show your R code for $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{A} \mathbf{B}$.
+
+    ```{r qmult4, exercise=TRUE, exercise.eval=FALSE}
+
+    ```
+
+```{r qmult4-solution}
+A <- matrix(1:4, 2, 2)
+B <- diag(1:2)
+A %*% B
+```
+
+5. Using the same $\mathbf{A}$ and $\mathbf{B}$ matrices, how would you create  $\left[\begin{smallmatrix}1&3\\4&8\end{smallmatrix}\right]$ by matrix multiplication?
+
+    ```{r qmult5, exercise=TRUE, exercise.eval=FALSE}
+
+    ```
+
+```{r qmult5-solution}
+B %*% A
+```
+
+6. Same $\mathbf{A}$ matrix as above and equation $\mathbf{A} \mathbf{B} = \mathbf{C}$.  Build a  $\mathbf{B}$ matrix such that $\mathbf{C}=2\mathbf{A}$.  So $\mathbf{C}=\left[ \begin{smallmatrix}2&6\\ 4&8 \end{smallmatrix}\right]$. Hint, $\mathbf{B}$ is diagonal.
+
+    ```{r qmult6, exercise=TRUE, exercise.eval=FALSE}
+
+    ```
+
+```{r qmult6-solution}
+A <- matrix(1:4, 2, 2)
+B <- diag(2,2)
+A %*% B
+```
+
+## Topic 4. Transpose
+
+```{r quizt}
+quiz(
+  question("If A is a 4 x 3 matrix, is `A %*% A` possible?",
+    answer("No, in matrix multiplication, columns of  the matrix on left must match rows of matrix on right.", correct = TRUE),
+    answer("Yes, because a matrix can always be multiplied by itself.")
+  ),
+  question("What is the size of `t(A)`?",
+    answer("4 x 3"),
+    answer("3 x 4", correct=TRUE),
+    answer("3 x 3"),
+    answer("4 x 4")
+  ),
+  question("If A is a 4 x 3 matrix, is `A %*% t(A)` possible?",
+    answer("No, because in matrix multiplication, columns of  the matrix on left must match rows of matrix on right."),
+    answer("No, because a matrix can never be multiplied by a transpose of itself."),
+    answer("Yes, because now the matrix on right is `t(A)` and that has 3 rows.", correct = TRUE)
+  )
+)
+```
+
+1. Build $\mathbf{A}$, a $4 \times 3$ matrix. Show how to write $\mathbf{A}\mathbf{A}^\top$ in R. The $\top$ means transpose.
+
+    ```{r qt1, exercise=TRUE, exercise.eval=FALSE}
+    
+    ```
+
+```{r qt1-solution}
+A <- matrix(1, 4, 2)
+A %*% t(A)
+```
+
+## Topic 5. Column and row sums
+
+
+1. Make $\mathbf{A}=\left[ \begin{smallmatrix}1&2\\3&4\end{smallmatrix}\right]$.  Build a $\mathbf{B}$ matrix to compute the row sums of $\mathbf{A}$.  So the first row sum would be $1+3$, the sum of all elements in row 1 of $\mathbf{A}$.  $\mathbf{C}$ will be $\left[ \begin{smallmatrix}4\\ 6\end{smallmatrix}\right]$, the row sums of $\mathbf{A}$. Show $\mathbf{B}$ and the matrix multiplication that makes $\mathbf{C}$.
+
+    ```{r qrc1, exercise=TRUE, exercise.eval=FALSE}
+    
+    ```
+
+```{r qrc1-solution}
+A <- matrix(1:4, 2, 2)
+B <- matrix(1, 2, 1)
+C <- A %*% B
+C
+```
+
+2. Same $\mathbf{A}$.  Build a $\mathbf{B}$ matrix to compute the columns sums of $\mathbf{A}$.  So the first column sum would be $1+2$, the sum of all elements in column 1 of $\mathbf{A}$.  $\mathbf{C}$ will be $\left[ \begin{smallmatrix}3&7\end{smallmatrix}\right]$, the column sums of $\mathbf{A}$. Show $\mathbf{B}$ and the matrix multiplication that makes $\mathbf{C}$.
+
+    ```{r qrc2, exercise=TRUE, exercise.eval=FALSE}
+    
+    ```
+
+```{r qrc2-solution}
+A <- matrix(1:4, 2, 2)
+B <- matrix(1, 1, 2)
+C <- B %*% A
+C
+```
+
+
 

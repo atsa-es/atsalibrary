@@ -31,3 +31,6 @@ vignettes/*.pdf
 *.knit.md
 .Rproj.user
 *.Rproj
+
+#Rconnect files
+*.dcf

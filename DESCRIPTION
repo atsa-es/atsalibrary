@@ -1,6 +1,6 @@
 Package: atsalibrary
 Title: Packages, data and scripts for ATSA course and book
-Version: 1.2
+Version: 1.3
 Author: Eli Holmes
 Maintainer: <eli.holmes@noaa.gov>
 Description: This package that will load the needed packages and data files for the ATSA course material when students install from GitHub.

@@ -31,6 +31,9 @@
 <li>
 <a href="#license">License</a>
 </li>
+<li>
+<a href="https://github.com/nwfsc-timeseries/atsalibrary">GitHub</a>
+</li>
 </ul>
 
 This package has the data for the University of Washington Fish507

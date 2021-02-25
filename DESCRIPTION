@@ -1,8 +1,12 @@
 Package: atsalibrary
-Title: Packages, data and scripts for ATSA course and book
+Title: Packages, data and scripts for ATSA course and lab book
 Version: 1.3
-Author: Eli Holmes
-Maintainer: <eli.holmes@noaa.gov>
+Authors@R: c(
+    person(c("Elizabeth", "Eli"), "Holmes", role = c("aut", "cre"), 
+      email = "eli.holmes@noaa.gov"),
+    person(c("Mark", "D."), "Scheuerell", role = "aut"),
+    person(c("Eric", "J."), "Ward", role = "aut"))
+Maintainer: The package maintainer <eli.holmes@noaa.gov>
 Description: This package that will load the needed packages and data files for the ATSA course material when students install from GitHub.
 Depends: R (>= 3.5.0)
 Imports: 

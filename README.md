@@ -38,17 +38,17 @@
 </li>
 </ul>
 
-This package has the data for the University of Washington Fish507
+This package has the data for the University of Washington Fish550
 Applied Time Series Analysis
-[course](https://nwfsc-timeseries.github.io/atsa) and [lab
-book](https://nwfsc-timeseries.github.io/atsa-labs).
+[course](https://atsa-es.github.io/atsa) and [lab
+book](https://atsa-es.github.io/atsa-labs).
 
 ### INSTALL
 
 To install:
 
     library(devtools)
-    devtools::install_github("nwfsc-timeseries/atsalibrary")
+    devtools::install_github("atsa-es/atsalibrary")
 
 Windows users:
 
@@ -68,10 +68,10 @@ data(package="atsalibrary")
 
 ### DOCUMENTATION
 
--   [ATSA lab book](https://nwfsc-timeseries.github.io/atsa-labs/) - The
+-   [ATSA lab book](https://atsa-es.github.io/atsa-labs/) - The
     atsalibrary is used in our Applied Time Series Analysis book
     developed from the labs in our course.
--   [ATSA course website](https://nwfsc-timeseries.github.io/atsa/) - We
+-   [ATSA course website](https://atsa-es.github.io/atsa/) - We
     have lectures and all material from our course on our course
     website.
 

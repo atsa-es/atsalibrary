@@ -28,6 +28,8 @@ Imports:
   magrittr (>= 1.5),
   MARSS (>= 3.11.2),
   quantmod (>= 0.3-13),
+  R2jags (>= 0.5-7),
+  rjags (>= 4-8),
   RCurl (>= 1.95-4.12),
   reshape2 (>= 1.4.3),
   rmarkdown (>= 1.10),
@@ -35,13 +37,11 @@ Imports:
   stringr (>= 1.4.0),
   tidyr (>= 1.1.2),
   tseries (>= 0.10-46),
-  urca (>= 1.3-0),
-  atsar
+  urca (>= 1.3-0)
 Suggests:
+  atsar,
   learnr,
-  R2jags (>= 0.5-7),
-  rstan (>= 2.18.2),
-  rjags (>= 4-8),
+  rstan (>= 2.18.2)
 License: GPL-2
 Encoding: UTF-8
 LazyData: true

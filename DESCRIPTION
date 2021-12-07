@@ -31,7 +31,6 @@ Imports:
   RCurl (>= 1.95-4.12),
   reshape2 (>= 1.4.3),
   rmarkdown (>= 1.10),
-  rstan (>= 2.18.2),
   stats (>= 3.5.3),
   stringr (>= 1.4.0),
   tidyr (>= 1.1.2),
@@ -41,6 +40,7 @@ Imports:
 Suggests:
   learnr,
   R2jags (>= 0.5-7),
+  rstan (>= 2.18.2),
   rjags (>= 4-8),
 License: GPL-2
 Encoding: UTF-8

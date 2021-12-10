@@ -11,6 +11,7 @@ Description: This package that will load the needed packages and data files for 
 Depends: R (>= 3.5.0)
 Imports: 
   broom (>= 0.5.1),
+  corrplot,
   datasets (>= 3.5.3),
   dplyr (>= 0.7.5),
   forecast (>= 8.4),

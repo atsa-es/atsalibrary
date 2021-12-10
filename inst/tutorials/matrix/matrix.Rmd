@@ -255,7 +255,7 @@ quiz(
 )
 ```
 
-1. Build a $4 \times 3$ matrix with all 1s. Multiply by a $3 \times 4$ matrix with all 2s.
+1. Build a $4 \times 3$ matrix with all 1s. Multiply this by a $3 \times 4$ matrix with all 2s.
 
     ```{r qmult1, exercise=TRUE, exercise.eval=FALSE}
     mat1 <-
@@ -293,7 +293,7 @@ B <- matrix(c(0, 1, 0), 1, 3)
 B %*% A
 ```
 
-4. Make $\mathbf{A}=\left[ \begin{smallmatrix}1&2\\3&4\end{smallmatrix}\right]$.  Build a $\mathbf{B}$ diagonal matrix such that $\mathbf{A}\mathbf{B}=\left[\begin{smallmatrix}1&6\\2&8\end{smallmatrix}\right]$. Show your R code for $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{A} \mathbf{B}$.
+4. Make $\mathbf{A}=\left[ \begin{smallmatrix}1&3\\2&4\end{smallmatrix}\right]$.  Build a $\mathbf{B}$ diagonal matrix such that $\mathbf{A}\mathbf{B}=\left[\begin{smallmatrix}1&6\\2&8\end{smallmatrix}\right]$. Show your R code for $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{A} \mathbf{B}$.
 
     ```{r qmult4, exercise=TRUE, exercise.eval=FALSE}
 
@@ -349,21 +349,21 @@ quiz(
 )
 ```
 
-1. Build $\mathbf{A}$, a $4 \times 3$ matrix. Show how to write $\mathbf{A}\mathbf{A}^\top$ in R. The $\top$ means transpose.
+1. Build $\mathbf{A}$, a $4 \times 3$ matrix with all 1s in the cells. Show how to write $\mathbf{A}\mathbf{A}^\top$ in R. The $\top$ means transpose.
 
     ```{r qt1, exercise=TRUE, exercise.eval=FALSE}
     
     ```
 
 ```{r qt1-solution}
-A <- matrix(1, 4, 2)
+A <- matrix(1, 4, 3)
 A %*% t(A)
 ```
 
 ## Topic 5. Column and row sums
 
 
-1. Make $\mathbf{A}=\left[ \begin{smallmatrix}1&2\\3&4\end{smallmatrix}\right]$.  Build a $\mathbf{B}$ matrix to compute the row sums of $\mathbf{A}$.  So the first row sum would be $1+3$, the sum of all elements in row 1 of $\mathbf{A}$.  $\mathbf{C}$ will be $\left[ \begin{smallmatrix}4\\ 6\end{smallmatrix}\right]$, the row sums of $\mathbf{A}$. Show $\mathbf{B}$ and the matrix multiplication that makes $\mathbf{C}$.
+1. Make $\mathbf{A}=\left[ \begin{smallmatrix}1&3\\2&4\end{smallmatrix}\right]$.  Build a $\mathbf{B}$ matrix to compute the row sums of $\mathbf{A}$.  So the first row sum would be $1+3$, the sum of all elements in row 1 of $\mathbf{A}$.  $\mathbf{C}$ will be $\left[ \begin{smallmatrix}4\\ 6\end{smallmatrix}\right]$, the row sums of $\mathbf{A}$. Show $\mathbf{B}$ and the matrix multiplication that makes $\mathbf{C}$.
 
     ```{r qrc1, exercise=TRUE, exercise.eval=FALSE}
     

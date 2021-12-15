@@ -34,7 +34,7 @@
 <a href="#license">License</a>
 </li>
 <li>
-<a href="https://github.com/nwfsc-timeseries/atsalibrary">GitHub</a>
+<a href="https://github.com/atsa-es/atsalibrary">GitHub</a>
 </li>
 </ul>
 

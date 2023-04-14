@@ -4,9 +4,15 @@
 #' @section Data:
 #' 
 #' * [chinook]
+#' * [ECNNO2]
+#' * [greeklandings]
+#' * [lakeWA]
+#' * [snotel]
+#' * [sockeye]
+#' * [neon_barc]
+#' * [MLCO2]
+#' * [NHTemp]
 #' 
-#' The rCAX R package includes a pull key so that you can query the CAX database. Should you
-#' need to use your own key see the vignette on the API functions.
 #'
 #' @name atsalibrary-package
 #' @aliases atsalibrary

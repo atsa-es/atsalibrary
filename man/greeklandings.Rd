@@ -23,7 +23,7 @@ reports published by the Hellenic Statisitcal Authority.  The reports
 are available in Digital Library (\href{http://dlib.statistics.gr}{ELSTAT}), Special Publications,
 Agriculture-Livestock-Fisheries, Fisheries.
 In Table IV, the landings data were taken from the total column, units are metric tons.
-In the table, sardine is denoted ' Pilchard'
+In the table, sardine is denoted ' Pilchard'. The data were assembled manually for the \href{https://github.com/Fish-Forecast}{Fish Forecast eBook}.
 }
 \examples{
 data(greeklandings)

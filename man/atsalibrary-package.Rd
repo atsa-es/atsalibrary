@@ -12,10 +12,15 @@ This package will load the needed packages and data files for the ATSA course ma
 
 \itemize{
 \item \link{chinook}
+\item \link{ECNNO2}
+\item \link{greeklandings}
+\item \link{lakeWA}
+\item \link{snotel}
+\item \link{sockeye}
+\item \link{neon}
+\item \link{MLCO2}
+\item \link{NHTemp}
 }
-
-The rCAX R package includes a pull key so that you can query the CAX database. Should you
-need to use your own key see the vignette on the API functions.
 }
 
 \keyword{package}

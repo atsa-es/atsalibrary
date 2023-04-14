@@ -51,3 +51,4 @@ LazyData: true
 RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
 Remotes: atsa-es/atsar
+URL: https://atsa-es.github.io/atsalibrary/

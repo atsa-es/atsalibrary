@@ -18,13 +18,13 @@ data(NHTemp)
 Northern Hemisphere land and ocean temperature anomalies from NOAA
 }
 \details{
-From \url{https://www.ncdc.noaa.gov/cag/global/data-info}: 
-"Global temperature anomaly data come from the Global Historical Climatology 
-Network-Monthly (GHCN-M) data set and International Comprehensive Ocean-Atmosphere 
-Data Set (ICOADS), which have data from 1880 to the present. These two datasets 
+From \url{https://www.ncdc.noaa.gov/cag/global/data-info}:
+"Global temperature anomaly data come from the Global Historical Climatology
+Network-Monthly (GHCN-M) data set and International Comprehensive Ocean-Atmosphere
+Data Set (ICOADS), which have data from 1880 to the present. These two datasets
 are blended into a single product to produce the combined global land and ocean
- temperature anomalies. The available timeseries of global-scale temperature anomalies 
- are calculated with respect to the 20th century average."
+temperature anomalies. The available timeseries of global-scale temperature anomalies
+are calculated with respect to the 20th century average."
 }
 \examples{
 # We downloaded this data and created the `NHTemp` dataframe with the following code:

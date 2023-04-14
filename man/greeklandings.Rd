@@ -20,7 +20,7 @@ from Greek fisheries compiled by the Hellenic Statisitcal Authority.
 \details{
 Data are from Table IV in the "Sea Fishery by Motor Vessels" statistical
 reports published by the Hellenic Statisitcal Authority.  The reports
-are available in Digital Library (\href{http://dlib.statistics.gr}{ELSTAT}), Special Publications, 
+are available in Digital Library (\href{http://dlib.statistics.gr}{ELSTAT}), Special Publications,
 Agriculture-Livestock-Fisheries, Fisheries.
 In Table IV, the landings data were taken from the total column, units are metric tons.
 In the table, sardine is denoted ' Pilchard'

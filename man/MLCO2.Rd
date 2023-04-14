@@ -21,14 +21,14 @@ These are monthly average C02 values recorded on Mauna Loa in Hawaii
 since 1958.  Data are provided by NOAA Earth System Rearch Laboratory, Global
 Monitoring Division.
 
-  Data from March 1958 through April 1974 have been obtained by C. David Keeling
-  of the Scripps Institution of Oceanography (SIO) and were obtained from the
-  Scripps website (\url{scrippsco2.ucsd.edu}).
-   The ppm column contains the monthly mean CO2 mole fraction determined
-   from daily averages.  The mole fraction of CO2, expressed as parts per million
-    (ppm) is the number of molecules of CO2 in every one million molecules of dried
-    air (water vapor removed).  If there are missing days, the value is the interpolated
-    value. See \url{www.esrl.noaa.gov/gmd/ccgg/trends/} for additional details.
+Data from March 1958 through April 1974 have been obtained by C. David Keeling
+of the Scripps Institution of Oceanography (SIO) and were obtained from the
+Scripps website (\url{scrippsco2.ucsd.edu}).
+The ppm column contains the monthly mean CO2 mole fraction determined
+from daily averages.  The mole fraction of CO2, expressed as parts per million
+(ppm) is the number of molecules of CO2 in every one million molecules of dried
+air (water vapor removed).  If there are missing days, the value is the interpolated
+value. See \url{www.esrl.noaa.gov/gmd/ccgg/trends/} for additional details.
 }
 \examples{
 # We downloaded this data and created the `MLCO2` dataframe with the following code:

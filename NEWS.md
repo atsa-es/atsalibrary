@@ -2,6 +2,11 @@
 output: html_document
 ---
 
+atsalibrary 1.4
+------------------------------------
+* updated chinook data sets and added better documentation
+
+
 atsalibrary 1.2
 ------------------------------------
 * sockeye dataset added with a number of Bristol Bay spawner recruit data

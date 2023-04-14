@@ -1,11 +1,12 @@
 #' Monthly and annual Chinook salmon commercial landings
 #'
-#' @description Monthly (WA and OR) and yearly (AK, CA, MI, OR, PA, and WA) data on 
-#' commercial landings and value of Chinook salmon. Data were assembled by the NOAA Fisheries, 
-#' Fisheries Statistics Division.
+#' @description Monthly (WA, OR and CA) and yearly (AK, CA, MI, OR, PA, and WA) data on 
+#' commercial landings and value of Chinook salmon. Yearly data were downloaded from the NOAA Fisheries, 
+#' Fisheries Statistics Division and the monthly data were downloaded from PacFIN.
 #' 
-#' @details There are two datasets included:  chinook-month and chinook-year.  The monthly data are available from 1990 and the annual data are
-#' available from 1950.  From the NOAA Fisheries Statistics Divison: "Collecting
+#' @details There are two datasets included:  `chinook.month` and `chinook.year`.  The monthly data are available from 1990 and the annual data are available from 1950.  The raw data and R script to process the data are in the `inst/original_data` folder.
+#' 
+#' From the NOAA Fisheries Statistics Divison: "Collecting
 #'  these data is a joint state and federal responsibility. 
 #'  State-federal systems gather landings data from state-mandated fishery 
 #'  trip-tickets, landing weighout reports from seafood dealers, 
@@ -33,21 +34,36 @@
 #' 
 #' @name chinook
 #' 
-#' @aliases chinook-month chinook-year
+#' @aliases chinook.month chinook.year
 #'
 #' @usage data(chinook)
 #' 
 #' @format Objects of class \code{"data.frame"}.  Columns are Year, 
-#' Month (if monthly), Species, State, log.metric.tons, metric.tons, and Value (USD)
+#' Month (if monthly), Species, State, log.metric.tons, metric.tons, and value.usd (USD)
 #'
 #' @keywords datasets
 #'
-#' @source \href{https://www.st.nmfs.noaa.gov/commercial-fisheries/commercial-landings/}{NOAA Commercial Landings Statistics}
+#' @source 
+#' Yearly \href{https://www.st.nmfs.noaa.gov/commercial-fisheries/commercial-landings/}{NOAA Commercial Landings Statistics}
+#' 
+#' Monthly \href{https://reports.psmfc.org/pacfin}{PacFIN}
+#' 
+#' @references 
+#' NOAA Fisheries Office of Science and Technology, Commercial Landings Query, Available at: www.fisheries.noaa.gov/foss, Accessed 14 April 2023
+#' 
+#' Pacific Fisheries Information Network (PacFIN) retrieval dated 14 April 2023, Pacific States Marine Fisheries Commission, Portland, Oregon (www.psmfc.org). Available at https://reports.psmfc.org/pacfin
 #'
 #' @examples
 #' data(chinook)
 #' dat <- subset(chinook.month, state="WA")$log.metric.tons
 #' datts <- ts(dat, start=c(1990,1), frequency=12)
 #' plot(datts)
+#' 
+#' ggplot(
+#'   chinook.month %>% 
+#'     mutate(t = zoo::as.yearmon(paste(Year, Month), "%Y %b")), 
+#'  aes(x=t, y=log.metric.tons)) +
+#'   geom_line() +
+#'   facet_wrap(~State)
 "chinook.month"
 "chinook.year"

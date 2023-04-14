@@ -5,7 +5,7 @@
 \alias{snotel}
 \title{Washington State SNOTEL measurements}
 \format{
-Objects of class \code{"data.frame"}.  Columns are Station, Station.Id, 
+Objects of class \code{"data.frame"}.  Columns are Station, Station.Id,
 Year, Month, SWE, and Date
 }
 \source{
@@ -18,9 +18,9 @@ data(snotel)
 Monthly Snow Water Equivalent (SWE) at Stations in Washington State
 }
 \details{
-These data are the snow water equivalent percent of normal. 
-This represents the snow water equivalent (SWE) compared to the average value for 
-that site on the same day. The data were downloaded from the USDA 
+These data are the snow water equivalent percent of normal.
+This represents the snow water equivalent (SWE) compared to the average value for
+that site on the same day. The data were downloaded from the USDA
 Natural Resources Conservation Service websited for the Washington Snow Survey Program.
 }
 \examples{

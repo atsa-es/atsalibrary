@@ -6,7 +6,7 @@
 #' 
 #' @details Spawner-recruit data for sockeye salmon 
 #' (_Oncorhynchus nerka_) from the Bristol Bay region
-#'  in SW Alaska that span the years 1952-1989. The data come from a large 
+#'  in SW Alaska that span the years 1952-2005. The data come from a large 
 #'  public database begun by Ransom Myers many years ago. The 
 #'  database is now maintained as the RAM Legacy Stock Assessment Database.
 #'
@@ -36,7 +36,7 @@
 #' 
 #' @keywords datasets
 #'
-#' @source \href{https://www.ramlegacy.org/}{RAM Legacy Stock Assessment Database}
+#' @source \href{https://www.ramlegacy.org/}{RAM Legacy Stock Assessment Database v4.491}
 #'
 #' @references 
 #' RAM Legacy Stock Assessment Database. 2018. Version 4.44-assessment-only. Released 2018-12-22. Retrieved from DOI:10.5281/zenodo.2542919.

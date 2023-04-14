@@ -7,11 +7,11 @@
 \format{
 Object of class \code{"data.frame"}
 \itemize{
-  \item \strong{brood_year}  Brood year. 
-  \item \strong{spawners} Spawners (count) in thousands 
-  \item \strong{recruits} Recruits (count) in thousands
-  \item \strong{pdo_summer_t2} Pacific Decadal Oscillation (PDO) from Apr-Sep of brood year $t+2$ 
-  \item \strong{pdo_winter_ts} Pacific Decadal Oscillation (PDO) from Oct (brood year $t+2$) to Mar (brood year $t+3$)
+\item \strong{brood_year}  Brood year.
+\item \strong{spawners} Spawners (count) in thousands
+\item \strong{recruits} Recruits (count) in thousands
+\item \strong{pdo_summer_t2} Pacific Decadal Oscillation (PDO) from Apr-Sep of brood year $t+2$
+\item \strong{pdo_winter_ts} Pacific Decadal Oscillation (PDO) from Oct (brood year $t+2$) to Mar (brood year $t+3$)
 }
 }
 \source{
@@ -24,11 +24,11 @@ data(KvichakSockeye)
 Spawner-recruit data for sockeye salmon from the Kvichak River.
 }
 \details{
-Spawner-recruit data for sockeye salmon 
-(_Oncorhynchus nerka_) from the Kvichak River
- in SW Alaska that span the years 1952-1989. The data come from a large 
- public database begun by Ransom Myers many years ago. The 
- database is now maintained as the RAM Legacy Stock Assessment Database.
+Spawner-recruit data for sockeye salmon
+(\emph{Oncorhynchus nerka}) from the Kvichak River
+in SW Alaska that span the years 1952-1989. The data come from a large
+public database begun by Ransom Myers many years ago. The
+database is now maintained as the RAM Legacy Stock Assessment Database.
 }
 \examples{
 data(KvichakSockeye)

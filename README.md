@@ -39,9 +39,8 @@
 </ul>
 
 This package has the data for the University of Washington Fish550
-Applied Time Series Analysis
-[course](https://atsa-es.github.io/atsa) and [lab
-book](https://atsa-es.github.io/atsa-labs).
+Applied Time Series Analysis [course](https://atsa-es.github.io/atsa)
+and [lab book](https://atsa-es.github.io/atsa-labs).
 
 ### INSTALL
 
@@ -68,17 +67,16 @@ data(package="atsalibrary")
 
 ### DOCUMENTATION
 
--   [ATSA lab book](https://atsa-es.github.io/atsa-labs/) - The
-    atsalibrary is used in our Applied Time Series Analysis book
-    developed from the labs in our course.
--   [ATSA course website](https://atsa-es.github.io/atsa/) - We
-    have lectures and all material from our course on our course
-    website.
+- [ATSA lab book](https://atsa-es.github.io/atsa-labs/) - The
+  atsalibrary is used in our Applied Time Series Analysis book developed
+  from the labs in our course.
+- [ATSA course website](https://atsa-es.github.io/atsa/) - We have
+  lectures and all material from our course on our course website.
 
 ### CITATION
 
 Holmes, E.E., M.D. Scheuerell, and E.J. Ward. ‘atsalibrary’: Applied
-Time Series Analysis datasets. Version 1.3.
+Time Series Analysis datasets. Version 1.4.
 
 ### LICENSE
 

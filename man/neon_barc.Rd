@@ -5,8 +5,8 @@
 \alias{neon_barc}
 \title{Lake Barco Aquatic Data}
 \format{
-neon_barc is a tibble with 
-columns are date, siteID, oxygen, temperature, oxygen_sd, temperature_sd, 
+neon_barc is a tibble with
+columns are date, siteID, oxygen, temperature, oxygen_sd, temperature_sd,
 depth_oxygen, depth_temperature, neon_product_ids, year, and cal_day.
 }
 \source{
@@ -21,24 +21,24 @@ Lake Barco data for the EFI 2021 Forecasting Challenge
 \details{
 The data for the aquatics challenge comes from a NEON site at Lake Barco (Florida). More about the data and challenge is \href{https://ecoforecast.org/efi-rcn-forecast-challenges/}{here} and the Github repository for getting all the necessary data is \href{https://github.com/eco4cast/neon4cast-aquatics}{eco4cast}.
 
-The \code{neon_barc} data set was created with the \code{aquatics-targets.csv.gz} file produced in the neon4cast-aquatics GitHub repository and saved in the inst folder in the atsalibrary package. 
+The \code{neon_barc} data set was created with the \code{aquatics-targets.csv.gz} file produced in the neon4cast-aquatics GitHub repository and saved in the inst folder in the atsalibrary package.
 From that file, \code{neon_barc} is created with
-```
-library(tidyverse)
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{library(tidyverse)
 library(lubridate)
 # This taken from code on NEON aquatics challenge
 targets <- readr::read_csv("aquatics-targets.csv.gz", guess_max = 10000)
-site_data_var <- targets %>%
+site_data_var <- targets \%>\%
   filter(siteID == "BARC")
 # This is key here - I added the forecast horizon on the end of the data for the forecast period
 full_time <- tibble(time = seq(min(site_data_var$time), max(site_data_var$time), by = "1 day"))
 # Join the full time with the site_data_var so there aren't gaps in the time column
-site_data_var <- left_join(full_time, site_data_var) %>%
+site_data_var <- left_join(full_time, site_data_var) \%>\%
   dplyr::rename(date = time)
 site_data_var$year <- year(site_data_var$date)
 site_data_var$cal_day <- yday(site_data_var$date)
 neon_barc <- site_data_var
-```
+}\if{html}{\out{</div>}}
 }
 \examples{
 data(neon_barc)

@@ -1,0 +1,316 @@
+---
+title: "MARSS Tutorial"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## The Multivariate Auto-regressive State-Space (MARSS) model is
+
+$$\mathbf{x}_t = \mathbf{B}\mathbf{x}_{t-1} + \mathbf{u} + \mathbf{w}_t, \mathbf{w}_t \sim \mathrm{MVN}(0, \mathbf{Q})$$
+$$\mathbf{y}_t = \mathbf{Z}\mathbf{x}_{t} + \mathbf{a} + \mathbf{v}_t, \mathbf{v}_t \sim \mathrm{MVN}(0, \mathbf{R})$$
+
+## Topic 1: univariate random walk
+
+1. Create the matrices for a univariate random walk with no drift: $x_t = x_{t-1} + w_t, w_t \sim N(0, q)$. Write as a list with names `B`, `U`, and `Q`.
+
+    ```{r t1q1, exercise=TRUE, exercise.eval=FALSE}
+    mod.list <- list()
+    ```
+
+```{r t1q1-solution}
+mod.list <- list(
+  B = matrix(1),
+  U = matrix(0),
+  Q = matrix("q")
+)
+```
+
+2. Change to this model (process variance is fixed not estimated): $x_t = x_{t-1} + w_t, w_t \sim N(0, 0.1)$
+
+    ```{r t1q2, exercise=TRUE, exercise.eval=FALSE}
+    mod.list <- list()
+    ```
+
+```{r t1q2-solution}
+mod.list <- list(
+  B = matrix(1),
+  U = matrix(0),
+  Q = matrix(0.1)
+)
+```
+
+3. Add an estimated drift to the model: $x_t = x_{t-1} + u + w_t, w_t \sim N(0, q)$
+
+    ```{r q2, exercise=TRUE, exercise.eval=FALSE}
+    mod.list <- list()
+    ```
+
+```{r q2-solution}
+mod.list <- list(
+  B = matrix(1),
+  U = matrix("u"),
+  Q = matrix("q")
+)
+```
+
+## Topic 2: A multivariate random walk model with 3 states
+
+```{r quiz-t2}
+quiz( caption="Let's say there are 3 x's, so 3 states. The model is x(t) = B x(t-1) + u + w(t), w(t) ~ MVN(0, Q).",
+  question("How many rows does x(t) have?",
+    answer("3", correct = TRUE),
+    answer("1"),
+    answer("x is not a matrix.")
+  ),
+  question("How many columns does x(t) have?",
+    answer("3"),
+    answer("1", correct = TRUE),
+    answer("x is not a matrix.")
+  ),
+  question("What are the dimensions of B?",
+    answer("1 x 1"),
+    answer("3 x 1"),
+    answer("3 x 3", correct = TRUE)
+  ),
+  question("What are the dimensions of Q?",
+    answer("1 x 1"),
+    answer("3 x 1"),
+    answer("3 x 3", correct = TRUE)
+  ),
+  question("What are the dimensions of u?",
+    answer("1 x 1"),
+    answer("3 x 1", correct = TRUE),
+    answer("3 x 3")
+  ),
+  question("What are the dimensions of w(t)?",
+    answer("1 x 1"),
+    answer("3 x 1", correct = TRUE),
+    answer("3 x 3")
+  ),
+  question("If I is a 3 x 3 identity matrix and x(t-1) is a 3 x 1 matrix, then `I %*% x(t-1)` equals what?",
+    answer("x(t-1)", correct=TRUE),
+    answer("That matrix muliplication is illegal."),
+    answer("I")
+  ),
+  question("What R code will create a 3 x 3 identity matrix?",
+    answer("matrix(1,3,3)"),
+    answer("diag(1, 3)", correct=TRUE),
+    answer("diag(3)", correct=TRUE),
+    answer("matrix(c(1,0,0,0,1,0,0,0,1), 3, 3", correct=TRUE)
+  ),
+  question("You want to specify that the process errors are independent (but nothing else). What does your Q matrix look like?",
+    answer("It is diagonal and has a 1 on the diagonal."),
+    answer("It is diagonal and all the values on the diagonal are the same."),
+    answer("It is diagonal. There are no constraints on the values on the diagonal.", correct=TRUE),
+    answer("There are different values for each element of the matrix.")
+  ),
+  question("You want to assume that the process errors are correlated. Are there values on the off-diagonal of Q?",
+    answer("No."),
+    answer("Yes.", correct = TRUE)
+  )
+  )
+```
+
+## Topic 3: MARSS() shortcuts
+
+```{r quiz-t3}
+quiz( caption="Text shortcuts for the model argument in MARSS(dat, model=list())", 
+  question("You want to put no constraints on Q, so estimate all variances and covariances. What is the shortcut for that in MARSS?",
+    answer("Q='unconstrained'", correct = TRUE),
+    answer("Q='equalvarcov'"),
+    answer("Q='identity'"),
+    answer("Q='diagonal and equal'"),
+    answer("Q='diagonal and unequal'"),
+    allow_retry = TRUE
+  ),
+  question("You want to assume that all states share the same process variance and covariance. What is the shortcut for that in the model argument for MARSS()?",
+    answer("Q='unconstrained'"),
+    answer("Q='equalvarcov'", correct = TRUE),
+    answer("Q='identity'"),
+    answer("Q='diagonal and equal'"),
+    answer("Q='diagonal and unequal'")
+  ),
+  question("You want to assume that the state process errors are independent, but no other constraints. What is the shortcut for that in the model argument for MARSS()?",
+    answer("Q='unconstrained'"),
+    answer("Q='equalvarcov'"),
+    answer("Q='identity'"),
+    answer("Q='diagonal and equal'"),
+    answer("Q='diagonal and unequal'", correct = TRUE)
+  ),
+  question("You want to assume that the state process errors are identical and independent (i.i.d.). What is the shortcut for that in the model argument for MARSS()?",
+    answer("Q='unconstrained'"),
+    answer("Q='equalvarcov'"),
+    answer("Q='identity'"),
+    answer("Q='diagonal and equal'", correct = TRUE),
+    answer("Q='diagonal and unequal'")
+  ),
+  question("You want to fix the state process errors to be i.i.d. with variance equal to 0.2. How would you specify that if there are 3 states?",
+    answer("Q='unconstrained'"),
+    answer("Q='equalvarcov'"),
+    answer("Q=diag(0.2, 3)", correct = TRUE),
+    answer("Q='diagonal and equal'"),
+    answer("Q='diagonal and unequal'")
+  ),
+  question("You want to fix the state process errors to be independent with the first two variances constrained to be the same and the third allowed to be different. How would you specify that?",
+    answer('Q=ldiag(c("q1", "q1", "q2"))', correct = TRUE),
+    answer("Q='equalvarcov'"),
+    answer('Q=diag(c("q1", "q1", "q2"), 3)'),
+    answer('Q=matrix(list("q1", 0, 0, 0, "q1", 0, 0, 0, "q2"), 3, 3)', correct = TRUE),
+    answer('Q=matrix(c("q1", 0, 0, 0, "q1", 0, 0, 0, "q2"), 3, 3)'),
+    allow_retry = TRUE,
+    message = "ldiag() is a helper function in MARSS to allow you to put a character string on a diagonal matrix and set the off-diagonals to 0. Try answer 3 and you will see that is puts NAs on the diagonal. Try answer 5 and you will see that it put '0' (in quotes) on the off-diagonal."
+  ),
+  question("You want to assume that all states share the same drift (u) value and you want to estimate that value. What is the shortcut for that in the model argument for MARSS()?",
+    answer("U='unconstrained'"),
+    answer("U='zero'"),
+    answer("U='equal'", correct = TRUE),
+    answer("diagonal and equal"),
+    answer("diagonal and unequal")
+  ),
+  question("You want to assume that the first and third states share the same drift (u) value but the second state has a different drift (u). How could you specify that?",
+    answer("U='unconstrained'"),
+    answer('U=matrix(c("u1", "u2", "u1"), 3, 1)', correct = TRUE),
+    answer("U='equal'"),
+    answer("U=matrix(c(1, 2, 1), 3, 1)"),
+    answer("diagonal and unequal"),
+    allow_retry = TRUE,
+    message = "The 4th answer would be a fixed not estimated value for the drifts."
+  ),
+  question("You want to assume that the first and third states share the same drift (u) value but the second state has a fixed drift of 0. How could you specify that?",
+    answer('U=matrix(list("u1", 0, "u1"), 3, 1)', correct = TRUE),
+    answer('U=matrix(c("u1", 0, "u1"), 3, 1)'),
+    answer("U='unequal'"),
+    answer("U=matrix(c(1, 0, 1), 3, 1)"),
+    allow_retry = TRUE,
+    message = "The 4th answer would be a fixed not estimated value for the drifts. The 2nd answer would convert that 0 to '0' and thus make it an estimated parameter called 0. list() is what allows us to combine strings (names of parameters) and numbers (fixed values that are not estimated)."
+    ),
+  question('In a matrix passed to the model argument in MARSS(), "0" (with quotes around it) is interpreted as',
+    answer('An estimated parameter called 0', correct = TRUE),
+    answer('The number 0')
+  ) 
+)
+```
+
+## Topic 4. Creating custom matrices for the x model
+
+1. Create this matrix in R:
+$$
+\begin{bmatrix}
+a & b & b \\
+b & c & d \\
+b & d & c
+\end{bmatrix}
+$$
+    ```{r t4q1, exercise=TRUE, exercise.eval=FALSE}
+    matrix( )
+    ```
+
+```{r t4q1-solution}
+matrix(c("a", "b", "b", "b", "c", "d", "b", "d", "c"), 3, 3)
+```
+
+2. Create this matrix in R:
+$$
+\begin{bmatrix}
+\phi \\
+\theta \\
+\phi
+\end{bmatrix}
+$$
+    ```{r t4q2, exercise=TRUE, exercise.eval=FALSE}
+    matrix( )
+    ```
+
+```{r t4q2-solution}
+matrix(c("phi", "theta", "phi"), 3, 1)
+```
+
+3. Create a Q variance-covariance matrix where the 1st and 2nd states covary and the 3rd and 4th states covary but these 2 groups of independent of each other. The matrix looks like so:
+$$
+\begin{bmatrix}
+a1 & b & 0 & 0\\
+b & a2 & 0 & 0 \\
+0 & 0 & c1 & d \\
+0 & 0 & d & c2
+\end{bmatrix}
+$$
+The first step, setting up a Q using `list(0)`, is done for you. Test your code to make sure it makes the right Q.
+
+
+    ```{r t4q3, exercise=TRUE, exercise.eval=FALSE}
+    Q <- matrix(list(0), 4, 4)
+    Q[ ] <- ...
+    ```
+
+```{r t4q3-solution}
+Q <- matrix(list(0), 4, 4)
+Q[1:2, 1:2] <- c("a1", "b", "b", "a2")
+Q[3:4, 3:4] <- c("c1", "d", "d", "c1")
+```
+
+4. What if you wanted the  1st and 3rd states to covary and the 2nd and 4th states to covary instead. The matrix now looks like so:
+$$
+\begin{bmatrix}
+a1 & 0 & b & 0\\
+0 & c1 & 0 & d \\
+0 & 0 & a2 & 0 \\
+0 & d & 0 & c2
+\end{bmatrix}
+$$
+How would you create this matrix? Can you think of a way to write your code to minimize errors?
+
+
+    ```{r t4q4, exercise=TRUE, exercise.eval=FALSE}
+    Q <- matrix(list(0), 4, 4)
+    Q[ ] <- ...
+    ```
+
+```{r t4q4-solution}
+Q <- matrix(list(0), 4, 4)
+pop1 <- c(1,3)
+pop2 <- c(2,4)
+Q[pop1, pop1] <- c("a1", "b", "b", "a2")
+Q[pop2, pop2] <- c("c1", "d", "d", "c1")
+```
+
+5. What if you wanted the  1st and 3rd states to have the same $u1$ and the 2nd and 4th states to have the same $u2$ . The matrix looks like so:
+$$
+\begin{bmatrix}
+u1\\
+u2 \\
+u1 \\
+u2
+\end{bmatrix}
+$$
+How would you create this matrix? Can you think of a way to write your code so that specify the states with shared $u$ with a vector? So like `pop1 <- c(1,3)` in this case?
+
+
+    ```{r t4q5, exercise=TRUE, exercise.eval=FALSE}
+    U <- matrix( )
+    ```
+
+```{r t4q5-solution}
+U <- matrix(0, 4, 1)
+pop1 <- c(1,3)
+pop2 <- c(2,4)
+U[pop1] <- "u1"
+U[pop2] <- "u2"
+```
+
+
+6. Make a $3 \times 3$ identity matrix.
+
+    ```{r t4q6, exercise=TRUE, exercise.eval=FALSE}
+    
+    ```
+
+```{r t4q6-solution}
+diag(1, 3)
+```
+
+

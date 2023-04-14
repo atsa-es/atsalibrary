@@ -59,7 +59,7 @@ packages.
 
 ### EXAMPLE
 
-Type `?` and the dataset name for the help file for each dataset.
+Type `?atsalibrary` to see the data available. Then click on the dataset name for the help file for each dataset.
 
 ``` r
 data(package="atsalibrary")

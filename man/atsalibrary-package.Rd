@@ -17,7 +17,7 @@ This package will load the needed packages and data files for the ATSA course ma
 \item \link{lakeWA}
 \item \link{snotel}
 \item \link{sockeye}
-\item \link{neon}
+\item \link{neon_barc}
 \item \link{MLCO2}
 \item \link{NHTemp}
 }

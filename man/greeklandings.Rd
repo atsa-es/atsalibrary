@@ -3,19 +3,39 @@
 \docType{data}
 \name{greeklandings}
 \alias{greeklandings}
+\alias{covs}
+\alias{covsmean.year}
+\alias{covsmean.mon}
 \title{Annual Anchovy, Sardine and Mackerel landings in Hellenic Waters 1964-2007}
 \format{
 Objects of class \code{"data.frame"}.  Columns are Year, Species, log.metric.tons, metric.tons
+
+An object of class \code{data.frame} with 264 rows and 4 columns.
+
+An object of class \code{list} of length 3.
+
+An object of class \code{data.frame} with 55 rows and 6 columns.
+
+An object of class \code{data.frame} with 656 rows and 7 columns.
 }
 \source{
 \href{http://dlib.statistics.gr/portal/page/portal/ESYE}{Hellenic Statisitcal Authority Digital Library}
 }
 \usage{
 data(greeklandings)
+
+greeklandings
+
+covs
+
+covsmean.year
+
+covsmean.mon
 }
 \description{
 Annual commercial landings of anchovy, sardine and mackerel
-from Greek fisheries compiled by the Hellenic Statisitcal Authority.
+from Greek fisheries compiled by the Hellenic Statistical Authority.
+Also included are covariates for the catch.
 }
 \details{
 Data are from Table IV in the "Sea Fishery by Motor Vessels" statistical
@@ -24,6 +44,8 @@ are available in Digital Library (\href{http://dlib.statistics.gr}{ELSTAT}), Spe
 Agriculture-Livestock-Fisheries, Fisheries.
 In Table IV, the landings data were taken from the total column, units are metric tons.
 In the table, sardine is denoted ' Pilchard'. The data were assembled manually for the \href{https://github.com/Fish-Forecast}{Fish Forecast eBook}.
+
+The covariates are Year, air.degC (air temperature), slp.millibars, sst.degC (sea surface temperature), vwnd.m/s (N/S wind speed), wspd3.m3/s3 (overall wind speed cubed). \code{covsmean.mon} and \code{covsmean.year} are averages over the 3 regions in the \code{covs} list. See the the \href{https://github.com/Fish-Forecast}{Fish Forecast eBook} for details.
 }
 \examples{
 data(greeklandings)

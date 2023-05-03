@@ -8,8 +8,8 @@ Authors@R: c(
     person(c("Eric", "J."), "Ward", role = "aut"))
 Maintainer: The package maintainer <eli.holmes@noaa.gov>
 Description: This package will load the needed packages and data files for the ATSA course material when students install from GitHub.
-Depends: R (>= 3.5.0)
-Imports: 
+Depends: 
+  R (>= 3.5.0),
   broom (>= 0.5.1),
   corrplot,
   datasets (>= 3.5.3),

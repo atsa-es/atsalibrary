@@ -3,16 +3,27 @@
 \docType{data}
 \name{snotel}
 \alias{snotel}
+\alias{snotelmeta}
 \title{Washington State SNOTEL measurements}
 \format{
-Objects of class \code{"data.frame"}.  Columns are Station, Station.Id,
-Year, Month, SWE, and Date
+\itemize{
+\item snotel: object of class \code{"data.frame"}.  Columns are Station, Station.Id, Year, Month, SWE, and Date
+\item snotelmeta: Station_Name, Station.Id, State.Code, Network.Code, Network.Name, Elevation, Latitude, Longitude"
+}
+
+An object of class \code{data.frame} with 27720 rows and 6 columns.
+
+An object of class \code{data.frame} with 70 rows and 8 columns.
 }
 \source{
 \href{https://www.nrcs.usda.gov/wps/portal/nrcs/main/wa/snow/}{USDA WA Snow Survey Program}
 }
 \usage{
 data(snotel)
+
+snotel
+
+snotelmeta
 }
 \description{
 Monthly Snow Water Equivalent (SWE) at Stations in Washington State
@@ -21,7 +32,7 @@ Monthly Snow Water Equivalent (SWE) at Stations in Washington State
 These data are the snow water equivalent percent of normal.
 This represents the snow water equivalent (SWE) compared to the average value for
 that site on the same day. The data were downloaded from the USDA
-Natural Resources Conservation Service websited for the Washington Snow Survey Program.
+Natural Resources Conservation Service website for the Washington Snow Survey Program. The \code{snotel} object is the SWE data and the \code{snotelmeta} is the station metadata (lat/lon and elevation).
 }
 \examples{
 data(snotel)

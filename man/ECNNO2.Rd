@@ -3,16 +3,25 @@
 \docType{data}
 \name{ECNNO2}
 \alias{ECNNO2}
+\alias{ECNmeta}
 \title{UK Atmospheric NO2}
 \format{
 ECNNO2 is the data and is an object of class \code{"data.frame"}.
 Columns are Year, Month, TubeID, SiteCode, and Value.  ECNmeta is the site locations.
+
+An object of class \code{data.frame} with 9108 rows and 7 columns.
+
+An object of class \code{data.frame} with 12 rows and 4 columns.
 }
 \source{
 \href{https://doi.org/10.5285/baf51776-c2d0-4e57-9cd3-30cd6336d9cf}{UK Centre for Ecolgoy & Hydrology}
 }
 \usage{
 data(ECNNO2)
+
+ECNNO2
+
+ECNmeta
 }
 \description{
 UK Environmental Change Network (ECN) atmospheric nitrogen chemistry data: 1993-2015

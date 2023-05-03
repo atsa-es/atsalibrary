@@ -62,4 +62,9 @@
 #' }
 #' 
 #' data(ECNNO2)
+NULL
+
+#' @rdname ECNNO2
 "ECNNO2"
+#' @rdname ECNNO2
+"ECNmeta"

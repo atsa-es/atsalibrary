@@ -6,7 +6,7 @@ Authors@R: c(
       email = "eli.holmes@noaa.gov"),
     person(c("Mark", "D."), "Scheuerell", role = "aut"),
     person(c("Eric", "J."), "Ward", role = "aut"))
-Maintainer: The package maintainer <eli.holmes@noaa.gov>
+Maintainer: Elizabeth E. Holmes <eli.holmes@noaa.gov>
 Description: This package will load the needed packages and data files for the ATSA course material when students install from GitHub.
 Depends: 
   R (>= 3.5.0),

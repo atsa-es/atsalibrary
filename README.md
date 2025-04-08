@@ -44,6 +44,13 @@ and [lab book](https://atsa-es.github.io/atsa-labs).
 
 ### INSTALL
 
+To install from R universe (preferred):
+
+    install.packages('atsalibrary', repos = c('https://atsa-es.r-universe.dev', 'https://cloud.r-project.org'))
+    
+    # to also install Suggests use
+    install.packages('atsalibrary', repos = c('https://atsa-es.r-universe.dev', 'https://cloud.r-project.org'), dependencies = TRUE)
+
 To install:
 
     library(devtools)

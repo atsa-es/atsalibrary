@@ -1,60 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/404.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/index.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/reference/ECNNO2.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/reference/KvichakSockeye.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/reference/MLCO2.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/reference/NHTemp.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/reference/atsalibrary-package.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/reference/chinook.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/reference/greeklandings.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/reference/lakeWA.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/reference/neon_barc.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/reference/snotel.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/reference/sockeye.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/tutorials/index.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/tutorials/marss.html</loc>
-  </url>
-  <url>
-    <loc>https://atsa-es.github.io/atsalibrary/tutorials/matrix.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://atsa-es.github.io/atsalibrary/404.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/authors.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/index.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/news/index.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/reference/ECNNO2.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/reference/KvichakSockeye.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/reference/MLCO2.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/reference/NHTemp.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/reference/atsalibrary-package.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/reference/chinook.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/reference/greeklandings.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/reference/hourlyphyto.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/reference/index.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/reference/lakeWA.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/reference/neon_barc.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/reference/snotel.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/reference/sockeye.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/tutorials/index.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/tutorials/marss.html</loc></url>
+<url><loc>https://atsa-es.github.io/atsalibrary/tutorials/matrix.html</loc></url>
 </urlset>
+

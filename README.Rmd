@@ -47,6 +47,14 @@ This package has the data for the University of Washington Fish550 Applied Time 
 
 ### INSTALL {#install}
 
+To install from R Universe (preferred):
+```
+install.packages('atsalibrary', repos = c('https://atsa-es.r-universe.dev', 'https://cloud.r-project.org'))
+
+# to also install Suggests use
+install.packages('atsalibrary', repos = c('https://atsa-es.r-universe.dev', 'https://cloud.r-project.org'), dependencies = TRUE)
+```
+
 To install:
 ```
 library(devtools)

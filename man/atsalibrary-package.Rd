@@ -23,4 +23,21 @@ This package will load the needed packages and data files for the ATSA course ma
 }
 }
 
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://atsa-es.github.io/atsalibrary/}
+}
+
+}
+\author{
+\strong{Maintainer}: Elizabeth Eli Holmes \email{eli.holmes@noaa.gov}
+
+Authors:
+\itemize{
+  \item Mark D. Scheuerell
+  \item Eric J. Ward
+}
+
+}
 \keyword{package}

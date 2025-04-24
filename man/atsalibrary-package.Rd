@@ -2,8 +2,8 @@
 % Please edit documentation in R/atsalibrary-package.R
 \docType{package}
 \name{atsalibrary-package}
-\alias{atsalibrary-package}
 \alias{atsalibrary}
+\alias{atsalibrary-package}
 \title{atsalibrary}
 \description{
 This package will load the needed packages and data files for the ATSA course material when students install from GitHub.
@@ -20,6 +20,7 @@ This package will load the needed packages and data files for the ATSA course ma
 \item \link{neon_barc}
 \item \link{MLCO2}
 \item \link{NHTemp}
+\item \link{esa_salmon}
 }
 }
 

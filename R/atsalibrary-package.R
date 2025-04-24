@@ -12,10 +12,10 @@
 #' * [neon_barc]
 #' * [MLCO2]
 #' * [NHTemp]
-#' 
+#' * [esa_salmon]
 #'
 #' @name atsalibrary-package
-#' @aliases atsalibrary
+#' @aliases atsalibrary-package
 #' @docType package
 #' @keywords package
 NULL

@@ -13,6 +13,8 @@
 #' * [MLCO2]
 #' * [NHTemp]
 #' * [esa_salmon]
+#' * [bristol_bay_sockeye]
+#' * [north_pacific_salmon]
 #'
 #' @name atsalibrary-package
 #' @aliases atsalibrary-package

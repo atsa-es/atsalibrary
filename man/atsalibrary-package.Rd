@@ -21,6 +21,8 @@ This package will load the needed packages and data files for the ATSA course ma
 \item \link{MLCO2}
 \item \link{NHTemp}
 \item \link{esa_salmon}
+\item \link{bristol_bay_sockeye}
+\item \link{north_pacific_salmon}
 }
 }
 

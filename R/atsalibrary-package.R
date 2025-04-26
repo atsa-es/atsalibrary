@@ -15,6 +15,7 @@
 #' * [esa_salmon]
 #' * [bristol_bay_sockeye]
 #' * [north_pacific_salmon]
+#' * [np_climate]
 #'
 #' @name atsalibrary-package
 #' @aliases atsalibrary-package

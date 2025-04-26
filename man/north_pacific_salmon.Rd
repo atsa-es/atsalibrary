@@ -4,6 +4,7 @@
 \name{north_pacific_salmon}
 \alias{north_pacific_salmon}
 \alias{np_salmon}
+\alias{np_salmon_year}
 \title{North Pacific Pink, Chum and Sockeye Salmon Abundance 1925-2015}
 \format{
 Objects of class \code{"data.frame"}.
@@ -16,14 +17,23 @@ Total abundance of natural spawners (not hatchery) from 15 regions in the N Paci
 These are data provided with Ruggerone, G. and Irvine, J. 2018. Numbers and biomass of
 natural- and hatchery-origin Pink, Chum, and Sockeye Salmon in the North Pacific Ocean, 1925-2015.
 Marine and Coastal Fisheries: Dynamics, Management, and Ecosystem Science 10. DOI: 10.1002/mcf2.10023.
+
+A total abundance data frame of pink, chum and sockeye summed across all regions is also provided.
 }
 \details{
-The data have the columns:
+The full data have the columns:
 \itemize{
 \item year
 \item region: ci e_kam japan kod korea m_i nbc pws sbc seak s_pen wa wak w_kam wc
 \item returns
 \item species: pink chum sockeye
+}
+
+The year (total abundance) data have the columns:
+\itemize{
+\item year
+\item chum, pink, sockeye
+and are the sum across all regions (with na.rm=TRUE).
 }
 }
 \examples{
@@ -34,6 +44,16 @@ np_salmon \%>\%
   geom_line() + 
   ggtitle("pink salmon log abundance") +
   facet_wrap(~region)
+  
+  np_salmon_year \%>\%
+  pivot_longer(cols = c(pink, chum, sockeye), names_to = "species", values_to = "returns") \%>\%
+  ggplot(aes(x = year, y = log(returns))) +
+  geom_line() +
+  facet_wrap(~ species, scales = "free_y") +
+  labs(title = "Log returns of salmon species", 
+       y = "log(returns)",
+       x = "Year") +
+  theme_minimal()
 }
 \references{
 Ruggerone, G. and Irvine, J. 2018. Numbers and biomass of

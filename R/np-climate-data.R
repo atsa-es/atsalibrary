@@ -60,7 +60,21 @@
 #' 
 #' @keywords datasets
 #' 
-#' @source \url{https://psl.noaa.gov/data/climateindices/list/}
+#' @source 
+#' Data retrieved from NOAA PSL Climate Indices:
+#' 
+#' - <https://psl.noaa.gov/data/correlation/pna.data>
+#' - <https://psl.noaa.gov/data/correlation/epo.data>
+#' - <https://psl.noaa.gov/data/correlation/wp.data>
+#' - <https://psl.noaa.gov/data/correlation/censo.data>
+#' - <https://psl.noaa.gov/data/correlation/whwp.data>
+#' - <https://psl.noaa.gov/data/correlation/oni.data>
+#' - <https://psl.noaa.gov/enso/mei/data/meiv2.data>
+#' - <https://psl.noaa.gov/pdo/data/pdo.timeseries.ersstv5.data>
+#' - <https://psl.noaa.gov/data/timeseries/IPOTPI/ipotpi.hadisst2.data>
+#' - <https://psl.noaa.gov/data/correlation/np.data>
+#' - <https://psl.noaa.gov/data/correlation/pacwarm.data>
+#' - <https://psl.noaa.gov/data/correlation/gmsst.data>
 #'
 #' @examples
 #' # Monthly PDO example

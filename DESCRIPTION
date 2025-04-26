@@ -1,6 +1,6 @@
 Package: atsalibrary
 Title: Packages, data and scripts for ATSA course and lab book
-Version: 1.6
+Version: 1.6.1
 Authors@R: c(
     person(c("Elizabeth", "Eli"), "Holmes", role = c("aut", "cre"), 
       email = "eli.holmes@noaa.gov"),

@@ -14,7 +14,7 @@ urls <- c(
   "https://psl.noaa.gov/data/correlation/whwp.data",
   "https://psl.noaa.gov/data/correlation/oni.data",
   "https://psl.noaa.gov/enso/mei/data/meiv2.data",
-  "https://psl.noaa.gov/data/correlation/pdo.data",
+  "https://psl.noaa.gov/pdo/data/pdo.timeseries.ersstv5.data",
   "https://psl.noaa.gov/data/timeseries/IPOTPI/ipotpi.hadisst2.data",
   "https://psl.noaa.gov/data/correlation/np.data",
   "https://psl.noaa.gov/data/correlation/pacwarm.data",
@@ -25,11 +25,11 @@ url <- urls[5]
 
 # Helper: Get the climate index name from the URL
 get_index_name <- function(url) {
-  if (str_detect(url, "ipotpi.hadisst2.data")) {
+  if (str_detect(url, "ipotpi.hadisst2.data")) 
     return("ipotpi")
-  } else {
-    return(str_remove(basename(url), "\\.data$"))
-  }
+  if (str_detect(url, "pdo.timeseries.ersstv5")) 
+    return("pdo")
+  return(str_remove(basename(url), "\\.data$"))
 }
 
 # Main loop to read and process
@@ -57,8 +57,12 @@ climate_indices <- lapply(urls, function(url) {
   df <- read_table2(
     paste(lines_clean, collapse = "\n"),
     col_names = FALSE,
-    na = c("-99.90", "-99.99", "-999.00", "-999", "Missing")
+    na = c("-9.90", "-99.90", "-99.99", "-999.00", "-999", "-9999", "-9999.000", "Missing", "-999.000", "9999.00", "-9.99"),
+    col_types = cols(.default = col_character())
   )
+  
+  # Now convert columns to numeric after NAs are correctly parsed
+  df <- df %>% mutate(across(everything(), as.numeric))
   
   # Rename columns
   colnames(df) <- c("year", month.abb)
@@ -66,7 +70,7 @@ climate_indices <- lapply(urls, function(url) {
   # Make sure all months are numeric
   df <- df %>%
     mutate(across(-year, as.numeric)) %>%
-    filter(year >= 1800, year <= 2100)
+    dplyr::filter(year >= 1800, year <= 2100)
   
   # Pivot longer
   df_long <- df %>%
@@ -75,7 +79,7 @@ climate_indices <- lapply(urls, function(url) {
       month = match(month, month.abb),
       date = as.Date(sprintf("%d-%02d-01", year, month))
     ) %>%
-    select(date, year, month, all_of(index_name))
+    dplyr::select(date, year, month, all_of(index_name))
   
   return(df_long)
 })
@@ -121,12 +125,12 @@ climate_vars <- setdiff(names(climate_with_season), c("date", "year", "month", "
 climate_seasonal_list <- lapply(climate_vars, function(var) {
   
   df <- climate_with_season %>%
-    select(year, season, month, value = all_of(var)) %>%
-    filter(!is.na(value))
+    dplyr::select(year, season, month, value = all_of(var)) %>%
+    dplyr::filter(!is.na(value))
   
   # Seasonal means
   seasonal <- df %>%
-    filter(!is.na(season)) %>%
+    dplyr::filter(!is.na(season)) %>%
     group_by(year, season) %>%
     summarise(value = mean(value, na.rm = TRUE), .groups = "drop") %>%
     pivot_wider(
@@ -162,22 +166,33 @@ save(np_climate_month, np_climate_seasonal, file=here::here("data", "np_climate.
 
 ## Save a copy
 # Download each file
-library(fs)
-for (url in urls) {
-  # Get the filename (e.g., pna.data)
-  filename <- basename(url)
-  
-  # Handle special naming case
-  if (filename == "ipotpi.hadisst2.data") {
-    filename <- "ipotpi.data"
-  }
-  
-  # Local path
-  destfile <- path("inst", "original_data", "climate", "raw_data", filename)
-  
-  message("Downloading: ", url)
-  
-  # Download
-  download.file(url, destfile = destfile, mode = "wb")
-}
+# library(fs)
+# for (url in urls) {
+#   # Get the filename (e.g., pna.data)
+#   filename <- basename(url)
+#   
+#   # Handle special naming case
+#   if (filename == "ipotpi.hadisst2.data") {
+#     filename <- "ipotpi.data"
+#   }
+#   
+#   # Local path
+#   destfile <- path("inst", "original_data", "climate", "raw_data", filename)
+#   
+#   message("Downloading: ", url)
+#   
+#   # Download
+#   download.file(url, destfile = destfile, mode = "wb")
+# }
 
+# Plot all climate indices as ts objects
+library(tibble)
+
+# Get the climate variable names (excluding date, year, month)
+climate_vars <- setdiff(names(np_climate_month), c("date", "year", "month"))
+
+# Loop through each variable and plot
+for (var in climate_vars) {
+  ts_data <- ts(np_climate_month[[var]], freq = 12, start = c(np_climate_month$year[1], 1))
+  plot(ts_data, main = var)
+}

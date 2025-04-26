@@ -50,7 +50,21 @@ A data frame with one row per year:
 Objects of class \code{"data.frame"}.
 }
 \source{
-\url{https://psl.noaa.gov/data/climateindices/list/}
+Data retrieved from NOAA PSL Climate Indices:
+\itemize{
+\item \url{https://psl.noaa.gov/data/correlation/pna.data}
+\item \url{https://psl.noaa.gov/data/correlation/epo.data}
+\item \url{https://psl.noaa.gov/data/correlation/wp.data}
+\item \url{https://psl.noaa.gov/data/correlation/censo.data}
+\item \url{https://psl.noaa.gov/data/correlation/whwp.data}
+\item \url{https://psl.noaa.gov/data/correlation/oni.data}
+\item \url{https://psl.noaa.gov/enso/mei/data/meiv2.data}
+\item \url{https://psl.noaa.gov/pdo/data/pdo.timeseries.ersstv5.data}
+\item \url{https://psl.noaa.gov/data/timeseries/IPOTPI/ipotpi.hadisst2.data}
+\item \url{https://psl.noaa.gov/data/correlation/np.data}
+\item \url{https://psl.noaa.gov/data/correlation/pacwarm.data}
+\item \url{https://psl.noaa.gov/data/correlation/gmsst.data}
+}
 }
 \usage{
 data(np_climate)
